@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#003d3d">
+    <title>CampusFind | Report Item</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="index.html" aria-label="CampusFind home">
+            <img
+                src="https://gnits.ac.in/wp-content/uploads/2025/08/gnits-logo.png"
+                alt="GNITS official logo"
+            >
+            <span class="brand-copy">
+                <strong>Campus<span>Find</span></strong>
+                <small>GNITS · CAMPUS COMMUNITY</small>
+            </span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="items.html">Browse Items</a>
+            <a href="report.html" aria-current="page">Report Item</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="report-page">
+            <p class="eyebrow">HELP YOUR CAMPUS</p>
+            <h1>Report a Lost or Found Item</h1>
+            <p class="section-description">
+                Add the details GNITS students need to help return it.
+            </p>
+
+            <form id="reportForm" class="report-form">
+                <label for="itemName">Item name</label>
+                <input
+                    id="itemName"
+                    name="itemName"
+                    type="text"
+                    placeholder="e.g. Black wallet"
+                    required
+                >
+
+                <label for="description">Item description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Describe the item and identifying details"
+                    required
+                ></textarea>
+
+                <label for="reportType">Report type</label>
+                <select id="reportType" name="reportType" required>
+                    <option value="" disabled selected>
+                        Select lost or found
+                    </option>
+                    <option value="Lost">Lost</option>
+                    <option value="Found">Found</option>
+                </select>
+
+                <label for="location">Last seen / found location</label>
+                <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    placeholder="e.g. College library"
+                    required
+                >
+
+                <label for="category">Category</label>
+                <input
+                    id="category"
+                    name="category"
+                    type="text"
+                    placeholder="e.g. Accessories"
+                    required
+                >
+
+                <label for="itemImage">Item photo (optional)</label>
+                <input
+                    id="itemImage"
+                    name="itemImage"
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                >
+                <p class="upload-hint">
+                    Choose a clear photo from your device.
+                    Accepted formats: JPG, PNG, WEBP and GIF.
+                    Maximum size: 5 MB.
+                </p>
+
+                <label for="reporterName">Your name</label>
+                <input
+                    id="reporterName"
+                    name="reporterName"
+                    type="text"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="contact">Your email address</label>
+                <input
+                    id="contact"
+                    name="contact"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+                <button class="primary-button" type="submit">
+                    Submit Report
+                </button>
+
+                <p
+                    id="formMessage"
+                    class="form-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Made for the GNITS community · G. Narayanamma Institute of
+            Technology &amp; Science (For Women).
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

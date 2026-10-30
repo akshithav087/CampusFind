@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind | Item Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="index.html" aria-label="CampusFind at GNITS home">
+            <img src="https://gnits.ac.in/wp-content/uploads/2025/08/gnits-logo.png" alt="GNITS official logo">
+            <span class="brand-copy"><strong>Campus<span>Find</span></strong><small>GNITS · CAMPUS COMMUNITY</small></span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="items.html" aria-current="page">Browse Items</a>
+            <a href="report.html">Report Item</a>
+        </nav>
+    </header>
+    <main class="detail-page">
+        <a class="back-link" href="items.html">← Back to Browse Items</a>
+        <p id="detailMessage" class="empty-state" role="status">Loading item details…</p>
+        <article id="itemDetails" class="detail-card" hidden>
+            <img id="detailPhoto" class="detail-photo" alt="" hidden>
+            <div class="detail-content">
+                <span id="detailStatus" class="status"></span>
+                <h1 id="detailTitle">Item details</h1>
+                <section id="detailFields" class="detail-fields" aria-label="Item information"></section>
+                <section class="contact-card" aria-labelledby="contactHeading">
+                    <p class="eyebrow">GET IN TOUCH</p>
+                    <h2 id="contactHeading">Contact the reporter</h2>
+                    <p class="contact-description">Your message will be emailed to the reporter. They can reply directly to you. Their email address stays private.</p>
+                    <form id="contactForm" class="contact-form">
+                        <label for="contactName">Your name</label>
+                        <input id="contactName" name="name" type="text" maxlength="100" required>
+                        <label for="contactEmail">Your email</label>
+                        <input id="contactEmail" name="email" type="email" maxlength="150" required>
+                        <label for="contactText">Message</label>
+                        <textarea id="contactText" name="message" rows="5" maxlength="5000" required></textarea>
+                        <button class="primary-button" type="submit">Send message</button>
+                        <p id="contactMessage" class="form-message" role="status"></p>
+                    </form>
+                </section>
+                <section id="returnConfirmation" class="contact-card" aria-labelledby="returnHeading" hidden>
+                    <p class="eyebrow">REPORTER CONFIRMATION</p>
+                    <h2 id="returnHeading">Have you received your item?</h2>
+                    <p class="contact-description">Confirm only if the item has been returned to you. This will remove the report from Browse Items.</p>
+                    <button id="confirmReturn" class="primary-button" type="button">Yes, I have it back</button>
+                    <p id="confirmMessage" class="form-message" role="status"></p>
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer><p>Made for the GNITS community · G. Narayanamma Institute of Technology & Science (For Women).</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>

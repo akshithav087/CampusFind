@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind | Browse Items</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="index.html" aria-label="CampusFind at GNITS home">
+            <img src="https://gnits.ac.in/wp-content/uploads/2025/08/gnits-logo.png" alt="GNITS official logo">
+            <span class="brand-copy"><strong>Campus<span>Find</span></strong><small>GNITS · CAMPUS COMMUNITY</small></span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="items.html" aria-current="page">Browse Items</a>
+            <a href="report.html">Report Item</a>
+        </nav>
+    </header>
+    <main>
+        <section class="items-section" id="items">
+            <p class="eyebrow">CAMPUS COMMUNITY</p>
+            <h1>Recently Reported Items</h1>
+            <p class="section-description">See what has been reported across the GNITS campus.</p>
+            <input id="searchInput" type="search" placeholder="Search items..." aria-label="Search items">
+            <div class="filters" aria-label="Filter items">
+                <button class="filter active" type="button" data-filter="All" aria-pressed="true">All Items</button>
+                <button class="filter" type="button" data-filter="Lost" aria-pressed="false">Lost</button>
+                <button class="filter" type="button" data-filter="Found" aria-pressed="false">Found</button>
+            </div>
+            <div id="itemList" class="item-grid" aria-live="polite"></div>
+            <p id="emptyState" class="empty-state" role="status">Loading items…</p>
+            <p class="browse-cta">Have something to report? <a href="report.html">Submit a report</a>.</p>
+        </section>
+    </main>
+    <footer><p>Made for the GNITS community · G. Narayanamma Institute of Technology & Science (For Women).</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>

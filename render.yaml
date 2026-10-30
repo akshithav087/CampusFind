@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: campusfind-gnits
+    runtime: python
+    region: singapore
+    plan: 0.5c-512mb
+    buildCommand: pip install -r backend/requirements.txt gunicorn
+    preDeployCommand: python backend/migrate.py
+    startCommand: cd backend && gunicorn app:app --bind 0.0.0.0:$PORT
+    disk:
+      name: item-photos
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: campusfind-database
+          property: connectionString
+      - key: UPLOAD_FOLDER
+        value: /var/data/uploads
+      - key: FRONTEND_BASE_URL
+        value: https://campusfind-gnits.onrender.com
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USE_TLS
+        value: "true"
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+
+databases:
+  - name: campusfind-database
+    databaseName: campus_lost_found
+    user: campusfind
+    region: singapore
+    plan: 0.1c-256mb
+    diskSizeGB: 1
